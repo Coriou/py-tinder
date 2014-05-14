@@ -4,9 +4,9 @@
 import tinder, argparse, json
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--action", "-a", help="What to do", type=str, required=True)
+parser.add_argument("--action", "-a", help="What to do [updates|recs|profile|ping|location|like|pass|user|token]", type=str, required=True)
 parser.add_argument("--data", "-d", help="JSON data to pass as argument", type=str)
-parser.add_argument("--token", "-t", help="The Facebook token / id pair or just the auth token", type=str)
+parser.add_argument("--token", "-t", help="The Facebook token / id pair or just the auth token", type=str, required=True)
 
 args = parser.parse_args()
 
