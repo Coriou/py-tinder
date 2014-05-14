@@ -17,6 +17,8 @@ class tinderClient():
 
 	def __init__(self, token, location = {'lat': '48.856614', 'lon': '2.352222'}, tinderVersion='3.0.4', iosVersion = '7.1'):
 
+		self.version(tinderVersion, iosVersion)
+
 		self.authHeaders = {
 			'Accept-Language': 'fr;q=1, en;q=0.9, de;q=0.8, zh-Hans;q=0.7, zh-Hant;q=0.6, ja;q=0.5',
 			'User-Agent': 'Tinder/'+tinderVersion+' (iPhone; iOS '+iosVersion+'; Scale/2.00)',
@@ -39,7 +41,6 @@ class tinderClient():
 		except:
 			self.errorLogger('Auth', 'Error while getting authentication token')
 
-		self.version(tinderVersion, iosVersion)
 		self.location = location
 		self.headers = self.authHeaders
 		self.headers['X-Auth-Token'] = self.token
